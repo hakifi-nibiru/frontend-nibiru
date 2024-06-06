@@ -8,7 +8,7 @@ import useWallet from '@/hooks/useWallet';
 import { useEffect } from 'react';
 import useLogin from '@/hooks/useLogin';
 import useLogout from '@/hooks/useLogout';
-
+import SignModal from './SignModal';
 
 const Auth = () => {
   const { isOpenConnectWallet } = useAppStore((state) => state);
@@ -55,7 +55,12 @@ const Auth = () => {
 
   }, [wallet?.walletAddress, isLogging, address]);
 
-  return null;
+  return <>
+    <SignModal
+      isOpen={isLogging}
+      onRequestClose={() => setIsLogging(false)}
+    />
+  </>;
 };
 
 export default Auth;

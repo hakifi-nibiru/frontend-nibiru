@@ -45,6 +45,7 @@ const useLogin = () => {
     }
 
     if (!addr) {
+      setIsLogging(false);
       return;
     }
 
