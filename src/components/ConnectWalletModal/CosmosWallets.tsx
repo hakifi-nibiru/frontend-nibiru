@@ -23,7 +23,7 @@ export function CosmosWallets({ closeModal }: WalletsProps) {
             await login();
             closeModal();
         } else {
-            window.open(new URL("https://chromewebstore.google.com/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en"), "_blank");
+            window.open(new URL("https://chromewebstore.google.com/detail/leap-cosmos-wallet/fcfcfllfndlomdhbehjjcoimbgofdncg"), "_blank");
         }
     };
 
