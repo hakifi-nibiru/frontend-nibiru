@@ -16,6 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ShortAddress from "./ShortAddress";
+import useFaucet from "@/components/BuyCover/PlaceOrder/hooks/useFaucet";
 
 const Profile = () => {
 	const router = useRouter();
@@ -25,7 +26,7 @@ const Profile = () => {
 		state.wallet,
 		state.setWallet,
 	]);
-
+	const { faucet } = useFaucet();
 	const logout = useLogout();
 
 	const { toggle, handleToggle } = useToggle();
@@ -33,19 +34,20 @@ const Profile = () => {
 		handleToggle();
 	};
 	const notification = useNotification();
-	const handleFaucetUsdt = async () => {
+	const handleFaucet = async () => {
 		try {
-			if (walletInfo?.isFaucet === false) {
-				const response = await getFaucet();
-				if (response) {
-					notification.success("Faucet USDT successfully");
-					setWallet({ ...walletInfo, isFaucet: true });
-				}
+
+			const response = await faucet();
+			if (response) {
+				notification.success("Faucet HUSD successfully");
+				// setWallet({ ...walletInfo, isFaucet: true });
 			}
+
 		} catch (error: any) {
 			notification.error(error.response.data.message);
 		}
 	};
+
 	if (isTablet) {
 		return (
 			<>
@@ -73,22 +75,22 @@ const Profile = () => {
 							<p className="">Profile</p>
 						</Button>
 
-						{walletInfo?.isFaucet === false ? (
-							<Button
-								size="md"
-								className={cn(
-									"flex gap-2 py-2 items-center w-full text-typo-secondary hover:bg-background-secondary"
-								)}
-								onClick={handleFaucetUsdt}>
-								<img
-									src="/assets/images/cryptos/usdt.png"
-									alt="USDT"
-									className="w-4 h-4"
-								/>{" "}
-								<p>Faucet</p>{" "}
-							</Button>
-						) : null}
-						<Link
+
+						<Button
+							size="md"
+							className={cn(
+								"flex gap-2 py-2 items-center w-full text-typo-secondary hover:bg-background-secondary"
+							)}
+							onClick={handleFaucet}>
+							<img
+								src="/assets/images/cryptos/usdt.png"
+								alt="USDT"
+								className="w-4 h-4"
+							/>{" "}
+							<p>Faucet</p>{" "}
+						</Button>
+
+						{/* <Link
 							href="https://app.nibiru.fi/faucet"
 							target="_blank"
 							className={cn(
@@ -102,7 +104,7 @@ const Profile = () => {
 
 							/>
 							<p className="flex items-center text-body-14">Faucet Nibi</p>{" "}
-						</Link>
+						</Link> */}
 
 						<Button
 							size="lg"
@@ -156,22 +158,22 @@ const Profile = () => {
 						<UserIcon />
 						<p className="">Profile</p>
 					</Button>
-					{walletInfo?.isFaucet === false ? (
-						<Button
-							size="md"
-							className={cn(
-								"flex gap-2 px-3 py-2 items-center w-full text-typo-secondary hover:bg-background-secondary"
-							)}
-							onClick={handleFaucetUsdt}>
-							<img
-								src="/assets/images/cryptos/usdt.png"
-								alt="USDT"
-								className="w-4 h-4"
-							/>{" "}
-							<p className=" text-body-14">Faucet USDT</p>
-						</Button>
-					) : null}
-					<Link
+
+					<Button
+						size="md"
+						className={cn(
+							"flex gap-2 px-3 py-2 items-center w-full text-typo-secondary hover:bg-background-secondary"
+						)}
+						onClick={handleFaucet}>
+						<img
+							src="/assets/images/cryptos/usdt.png"
+							alt="USDT"
+							className="w-4 h-4"
+						/>{" "}
+						<p className=" text-body-14">Faucet HUSD</p>
+					</Button>
+
+					{/* <Link
 						href="https://app.nibiru.fi/faucet"
 						target="_blank"
 						className={cn(
@@ -185,7 +187,7 @@ const Profile = () => {
 
 						/>
 						<p className="flex items-center text-body-14">Faucet Nibi</p>{" "}
-					</Link>
+					</Link> */}
 
 
 					<Button

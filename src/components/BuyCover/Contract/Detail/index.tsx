@@ -143,7 +143,7 @@ const DetailInsuranceModal = () => {
 	}, [insuranceSelected]);
 
 	const handleBuybackAction = () => {
-		router.push(`/buy-cover/${insurance.asset}USDT`);
+		router.push(`/buy-cover/${insurance.asset}HUSD`);
 		toggleDetailModal();
 	};
 
@@ -371,7 +371,7 @@ const DetailInsuranceModal = () => {
 										) : (
 											<CloseButton
 												onClick={handleCloseAction}
-												symbol={`${insurance.asset}USDT`}
+												symbol={`${insurance.asset}HUSD`}
 												pCancel={insurance.p_cancel as number}
 												pClaim={insurance.p_claim as number}
 												title="Close contract"
@@ -399,11 +399,11 @@ const DetailInsuranceModal = () => {
 											)}>
 											<Information
 												marketPairs={marketPairs}
-												symbol={insurance.asset + "USDT"}
+												symbol={insurance.asset + "HUSD"}
 											/>
 										</section>
 										<Chart
-											symbol={`${insurance.asset}USDT`}
+											symbol={`${insurance.asset}HUSD`}
 											data={chartData}
 											isHistory={isHistory}
 											fullScreen={fullScreen}

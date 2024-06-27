@@ -5,7 +5,7 @@ import { NibijsContextProvider } from "@/context/NibiruJS";
 // import { ThemeProvider } from "next-themes";
 
 import { ChainProvider } from '@cosmos-kit/react';
-import { chains, assets } from 'chain-registry/testnet';
+import { chains, assets } from 'chain-registry/mainnet';
 import { wallets as leapWallets } from '@cosmos-kit/leap-extension';
 import { wallets as keplrWallet } from '@cosmos-kit/keplr-extension';
 

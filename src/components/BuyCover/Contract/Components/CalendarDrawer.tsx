@@ -13,7 +13,6 @@ const CalendarDrawer = ({ range, onChange, title }: CalendarDrawerProps) => {
     const [selectedDate, setSelectedDate] = React.useState<DateRange | undefined>(range);
 
     const handleOnChangeDate = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log("onclick", selectedDate)
         onChange(selectedDate as DateRange);
     };
 

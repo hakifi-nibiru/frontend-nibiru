@@ -82,9 +82,9 @@ const CoverAmountInput = forwardRef<HTMLInputElement, CoverAmountInputProps>(
     return (
       <FormInputNumber
         ref={forwardRef}
-        suffix={<p className="text-body-14 text-typo-secondary">USDT</p>}
+        suffix={<p className="text-body-14 text-typo-secondary">HUSD</p>}
         placeholder="Q-Cover"
-        tooltip=" The insured value of your spot asset or derivative volume. Customize Insured value will affect the margin limit. You are insuring an asset/position volume worth 75 USDT"
+        tooltip=" The insured value of your spot asset or derivative volume. Customize Insured value will affect the margin limit. You are insuring an asset/position volume worth 75 HUSD"
         size="lg"
         label="Insured value"
         value={value}

@@ -15,11 +15,11 @@ const NibijsContext = createContext<NibiruContextType | null>(null);
 
 const NibijsContextProvider = ({ children }: { children: ReactNode; }) => {
     const [querier, setQuerier] = useState<NibiruQuerier | null>(null);
-    const chain = useMemo(() => Testnet(), []);
+    const chain = useMemo(() => Mainnet(), []);
 
     useEffect(() => {
         const initQuerier = async () => {
-            const chain = Testnet();
+            const chain = Mainnet();
             const querier = await NibiruQuerier.connect(chain.endptTm);
             setQuerier(querier);
         }

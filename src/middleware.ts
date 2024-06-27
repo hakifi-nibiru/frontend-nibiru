@@ -5,7 +5,7 @@ import { HAKIFI_KEY } from "@/utils/constant";
 const cookieName = "i18next";
 
 export function middleware(req: NextRequest) {
-	const symbol = req.cookies.get(HAKIFI_KEY.SYMBOL) ?? "BNBUSDT";
+	const symbol = req.cookies.get(HAKIFI_KEY.SYMBOL) ?? "BNBHUSD";
 	if (
 		req.nextUrl.pathname.indexOf("icon") > -1 ||
 		req.nextUrl.pathname.indexOf("chrome") > -1

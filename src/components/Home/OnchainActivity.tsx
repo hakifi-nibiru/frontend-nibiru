@@ -92,7 +92,7 @@ const OnchainActivity = memo(
 									{item?.side === "BEAR" ? "Bear" : "Bull"}
 								</p>
 								<p className="text-typo-secondary text-xs">
-									{item?.margin | 0} USDT
+									{item?.margin | 0} HUSD
 								</p>
 							</div>
 						</div>

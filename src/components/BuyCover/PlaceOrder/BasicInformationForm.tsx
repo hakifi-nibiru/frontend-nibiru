@@ -14,7 +14,7 @@ import useToggle from '@/hooks/useToggle';
 import useBuyCoverStore from '@/stores/buy-cover.store';
 import { cn } from '@/utils';
 import { formatNumber } from '@/utils/format';
-import { USDT_NIBIRU_ADDRESS } from '@/web3/constants';
+import { NIBIRU_HUSD_ADDRESS } from '@/web3/constants';
 import { useEffect, useMemo, useRef } from 'react';
 import { UseFormSetValue } from 'react-hook-form';
 
@@ -27,7 +27,7 @@ const BasicInformationForm = ({ pair, setValue }: BasicInformationFormProps) => 
     const { handleToggle, toggle } = useToggle();
     const onmounted = useRef(false);
 
-    const { balance: usdtBalance, refetch } = useBalance(USDT_NIBIRU_ADDRESS);
+    const { balance: usdtBalance, refetch } = useBalance(NIBIRU_HUSD_ADDRESS);
 
     const [periodUnit, period] = useBuyCoverStore(state => [state.periodUnit, state.period]);
     const listChangeRatios = useMemo(() => {
@@ -63,7 +63,7 @@ const BasicInformationForm = ({ pair, setValue }: BasicInformationFormProps) => 
     const isTablet = useIsTablet();
     return (
         <section className="text-body-14 flex items-center justify-between">
-            <section className="text-typo-secondary">Available: <span className="text-typo-primary"> {formatNumber(usdtBalance)} USDT</span>
+            <section className="text-typo-secondary">Available: <span className="text-typo-primary"> {formatNumber(usdtBalance)} HUSD</span>
             </section>
             <section className="flex items-center text-typo-secondary gap-2">
                 <TooltipCustom

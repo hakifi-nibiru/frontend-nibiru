@@ -87,8 +87,9 @@ const ButtonPairsWrapper = React.forwardRef<
 	}, [sorting]);
 
 	const category = useMemo(() => {
+		const temp = symbol.replace("HUSD", "USDT");
 		if (pairs && categories) {
-			const pairId = pairs.find((item) => item.symbol === symbol)?.token
+			const pairId = pairs.find((item) => item.symbol === temp)?.token
 				.tagIds[0];
 			const categoryItem = categories.find((item) => {
 				return pairId === item.id;
@@ -183,13 +184,13 @@ const ButtonPairsWrapper = React.forwardRef<
 									!toggle ? "text-typo-primary" : "text-typo-accent"
 								)}
 							>
-								{symbol.split("USDT")[0]}
+								{symbol.split("HUSD")[0]}
 							</span>{" "}
 							<span
 								className={!toggle ? "text-typo-secondary" : "text-typo-accent"}
 							>
 								{" "}
-								/ USDT
+								/ HUSD
 							</span>
 						</div>
 						<ChevronIcon
@@ -289,13 +290,13 @@ const ButtonPairsWrapper = React.forwardRef<
 									!toggle ? "text-typo-primary" : "text-typo-accent"
 								)}
 							>
-								{symbol.split("USDT")[0]}
+								{symbol.replace("HUSD", "")}
 							</span>{" "}
 							<span
 								className={!toggle ? "text-typo-secondary" : "text-typo-accent"}
 							>
 								{" "}
-								/ USDT
+								/ HUSD
 							</span>
 						</div>
 						<ChevronIcon

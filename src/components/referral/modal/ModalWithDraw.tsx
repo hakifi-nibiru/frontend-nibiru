@@ -60,7 +60,7 @@ const ModalWithdraw: React.FC<ModalWithdrawProps> = ({
 				<p className="text-2xl">Withdraw commission</p>
 				<div className="text-2xl text-typo-secondary">
 					<span className="ml-1 text-typo-accent">
-						{formatNumber(availableCommission, 2)} USDT
+						{formatNumber(availableCommission, 2)} HUSD
 					</span>
 				</div>
 				<div className="mt-5 w-full px-4">

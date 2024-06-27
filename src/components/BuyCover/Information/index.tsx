@@ -24,7 +24,8 @@ type InformationProps = {
 const Information = ({ marketPairs, symbol }: InformationProps) => {
     const isTablet = useIsTablet();
     const [ticker, setTicker] = useState<Ticker | null>(null);
-    useTickerSocket(symbol, setTicker);
+    const temp = symbol.replace("HUSD", "USDT")
+    useTickerSocket(temp, setTicker);
     const value: number = Number(ticker?.lastPrice) ?? 0;
 
     const priceChangePercent = useMemo(
@@ -46,7 +47,6 @@ const Information = ({ marketPairs, symbol }: InformationProps) => {
     );
     const [setStartOnboard] = useAppStore(state => [state.setStartOnboard]);
     const handleOnboard = () => {
-        console.log('click')
         handleToggle(false);
         setStartOnboard(true);
     };

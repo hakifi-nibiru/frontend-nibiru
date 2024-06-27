@@ -9,7 +9,7 @@ const Introduction = dynamic(() => import('@/components/BuyCover/Introduction'),
 
 async function getData(symbol: string) {
   try {
-    const pair = await getPairDetail(symbol);
+    const pair = await getPairDetail(symbol.replace("HUSD","USDT"));
 
     if (!pair || !pair.config) {
       return null;
@@ -39,7 +39,12 @@ type Props = {
 // set dynamic metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { symbol } = params;
-
+  const temp = (symbol as string).replace("HUSD","USDT")
+  if(!symbol) {
+    return {
+      title: `Loading ...`
+    }
+  }
   return {
     title: `${symbol.substring(0, -4)}/${symbol.slice(-4)} | Hakifi insurance`,
   };
@@ -50,7 +55,7 @@ async function BuyCover({
 }: {
   params: { symbol: string; };
 }) {
-  const pair = await getData(symbol);
+  const pair = await getData((symbol as string).replace("HUSD","USDT"));
   const marketPairs = await getMarketPairs();
   if (!pair) return notFound();
 

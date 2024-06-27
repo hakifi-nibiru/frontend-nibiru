@@ -59,7 +59,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 showArrow={true}
             />
 
-            <div className="text-typo-primary">{formatNumber(insurance.q_covered)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.q_covered)} {"HUSD"}</div>
         </div>
         {/* <div className="flex items-center justify-between text-body-12">
             <div className="text-body-14 !text-typo-secondary text-body-14">Side</div>
@@ -71,7 +71,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Margin</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.margin)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.margin)} {"HUSD"}</div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -79,7 +79,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Claim amount</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.q_claim)} {insurance.unit} <span className="text-positive">({qclaim_ratio}%)</span></div>
+            <div className="text-typo-primary">{formatNumber(insurance.q_claim)} {"HUSD"} <span className="text-positive">({qclaim_ratio}%)</span></div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -111,7 +111,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Open price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_open)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_open)} {"HUSD"}</div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -120,7 +120,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 showArrow={true}
             />
             <div className="text-typo-primary">
-                <TickerWrapper jump symbol={`${insurance.asset}${insurance.unit}`} suffix={insurance.unit} showPercent={false} />
+                <TickerWrapper jump symbol={`${insurance.asset}${insurance.unit}`} suffix={"HUSD"} showPercent={false} />
             </div>
         </div>
         <div className="flex items-center justify-between text-body-14">
@@ -129,7 +129,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Claim price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_claim)} {insurance.unit} <span className={cn(pclaim_ratio.isIncrease ? "text-positive" : "text-negative")}>({pclaim_ratio.ratio}%)</span></div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_claim)} {"HUSD"} <span className={cn(pclaim_ratio.isIncrease ? "text-positive" : "text-negative")}>({pclaim_ratio.ratio}%)</span></div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -137,7 +137,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Refund price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_refund)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_refund)} {"HUSD"}</div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -146,7 +146,7 @@ export const OpeningInsurance = ({ insurance, className }: InsuranceProps) => {
                 showArrow={true}
             />
 
-            <div className="text-typo-primary">{formatNumber(insurance.p_liquidation)} {insurance.unit} <span className={cn(pexpire_ratio.isIncrease ? "text-positive" : "text-negative")}>({pexpire_ratio.ratio}%)</span></div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_liquidation)} {"HUSD"} <span className={cn(pexpire_ratio.isIncrease ? "text-positive" : "text-negative")}>({pexpire_ratio.ratio}%)</span></div>
         </div>
     </section>;
 };
@@ -209,7 +209,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="border-b border-dashed border-divider-secondary text-body-14 !text-typo-secondary">Insured value</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.q_covered)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.q_covered)} {"HUSD"}</div>
         </div>
         {/* <div className="flex items-center justify-between text-body-14">
             <div className="text-typo-secondary text-body-14">Side</div>
@@ -221,7 +221,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="border-b border-dashed border-divider-secondary text-body-14 !text-typo-secondary">Margin</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.margin)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.margin)} {"HUSD"}</div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -229,7 +229,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Claim amount</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.q_claim)} {insurance.unit} <span className="text-positive">({qclaim_ratio}%)</span></div>
+            <div className="text-typo-primary">{formatNumber(insurance.q_claim)} {"HUSD"} <span className="text-positive">({qclaim_ratio}%)</span></div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <div className="text-typo-secondary text-body-14">PnL</div>
@@ -273,7 +273,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Open price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_open)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_open)} {"HUSD"}</div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -281,7 +281,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Close price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_close)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_close)} {"HUSD"}</div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -289,7 +289,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Claim price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_claim)} {insurance.unit} <span className={cn(pclaim_ratio.isIncrease ? "text-positive" : "text-negative")}>({pclaim_ratio.ratio}%)</span></div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_claim)} {"HUSD"} <span className={cn(pclaim_ratio.isIncrease ? "text-positive" : "text-negative")}>({pclaim_ratio.ratio}%)</span></div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -297,7 +297,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Refund price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_refund)} {insurance.unit}</div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_refund)} {"HUSD"}</div>
         </div>
         <div className="flex items-center justify-between text-body-14">
             <TooltipCustom
@@ -305,7 +305,7 @@ export const HistoryInsurance = ({ insurance, className }: InsuranceProps) => {
                 title={<p className="text-body-14 !text-typo-secondary border-b border-dashed border-divider-secondary">Liquid. price</p>}
                 showArrow={true}
             />
-            <div className="text-typo-primary">{formatNumber(insurance.p_liquidation)} {insurance.unit} <span className={cn(pexpire_ratio.isIncrease ? "text-positive" : "text-negative")}>({pexpire_ratio.ratio}%)</span></div>
+            <div className="text-typo-primary">{formatNumber(insurance.p_liquidation)} {"HUSD"} <span className={cn(pexpire_ratio.isIncrease ? "text-positive" : "text-negative")}>({pexpire_ratio.ratio}%)</span></div>
         </div>
 
     </section>;

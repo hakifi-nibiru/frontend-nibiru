@@ -103,7 +103,7 @@ const ReferralStatistic: React.FC = () => {
 								<p className="w-full text-center text-typo-disable">Withdraw</p>
 							</Button>
 						}
-						content="Minimum to withdraw is 10 USDT."
+						content="Minimum to withdraw is 10 HUSD."
 						contentClassName="w-full"
 					/>
 				) : (

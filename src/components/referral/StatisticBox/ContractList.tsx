@@ -187,7 +187,7 @@ const ContractList = () => {
 								<span className="text-typo-primary">
 									{row.getValue("asset")}
 								</span>
-								/<span>USDT</span>
+								/<span>HUSD</span>
 							</div>
 						</div>
 					);
@@ -589,7 +589,7 @@ const ContractList = () => {
 												/>
 												<TickerWrapper
 													jump
-													symbol={`${insurance.asset}USDT`}
+													symbol={`${insurance.asset}HUSD`}
 													decimal={8}
 												/>
 											</div>
@@ -605,7 +605,7 @@ const ContractList = () => {
 												/>
 												<PriceExpiredWrapper
 													pExpired={insurance.p_liquidation}
-													symbol={`${insurance.asset}USDT`}
+													symbol={`${insurance.asset}HUSD`}
 												/>
 											</div>
 											<div className="flex items-center justify-between text-body-12">
@@ -662,7 +662,7 @@ const ContractList = () => {
 												<span className="text-typo-primary">
 													{insurance.asset}
 												</span>
-												<span className="text-typo-secondary">/ USDT</span>
+												<span className="text-typo-secondary">/ HUSD</span>
 											</div>
 										</div>
 										<div

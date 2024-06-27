@@ -1,3 +1,5 @@
+import { Mainnet } from "@nibiruchain/nibijs";
+
 export const VNST_ADDRESS: string = process.env
   .NEXT_PUBLIC_VNST_ADDRESS as string;
 
@@ -13,6 +15,9 @@ export const INSURANCE_ADDRESS: string = process.env
 export const INSURANCE_NIBIRU_ADDRESS: string = process.env
   .NEXT_PUBLIC_INSURANCE_NIBIRU_ADDRESS as string;
 
+export const NIBIRU_HUSD_ADDRESS: string = process.env
+  .NEXT_PUBLIC_NIBIRU_HUSD_ADDRESS as string;
+
 export const INSURANCE_STRUCTURED_ADDRESS: string = process.env
   .NEXT_PUBLIC_INSURANCE_STRUCTURED_ADDRESS as string;
 
@@ -26,4 +31,4 @@ export const VNST_DECIMAL = 18;
 
 export const DISABLED_AUTO_CONNECT_KEY = "disabled_auto_connect";
 
-export const CHAIN_NAME = "nibirutestnet";
+export const CHAIN_NAME = "nibiru";

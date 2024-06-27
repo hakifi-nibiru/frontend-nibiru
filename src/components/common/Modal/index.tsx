@@ -118,7 +118,7 @@ const Modal = ({
                 overlayClassName={overlayClassName}
                 onInteractOutside={onInteractOutside}
                 size={size}
-                className={cn("sm:max-h-[740px]", contentClassName)}
+                className={cn("sm:max-h-[740px] bg-background-tertiary", contentClassName)}
             >
                 <section className={cn("flex items-center px-4", !!prefix ? "justify-between" : "justify-end")}>
                     {

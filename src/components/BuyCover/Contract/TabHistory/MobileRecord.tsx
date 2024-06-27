@@ -38,7 +38,7 @@ const MobileRecord = ({ data, onShowDetail }: RecordProps) => {
                     />
                     <div className="flex items-center gap-1">
                         <span className="text-typo-primary">{data.asset}</span>
-                        <span className="text-typo-secondary">/ USDT</span>
+                        <span className="text-typo-secondary">/ HUSD</span>
                     </div>
                 </div>
                 <div

@@ -81,7 +81,7 @@ const TabHistory = () => {
                             />
                             <div className="flex items-center gap-1">
                                 <span className="text-typo-primary">{row.getValue('asset')}</span>/
-                                <span>USDT</span>
+                                <span>HUSD</span>
                             </div>
                         </div>
                     );

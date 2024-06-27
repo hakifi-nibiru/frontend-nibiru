@@ -138,3 +138,9 @@ export const STATUS_DEFINITIONS: Record<string, {
     },
 };
 export const CHAIN_SCAN = process.env.NEXT_PUBLIC_CHAIN_SCAN;
+
+export const TWITTER_LINK = process.env.NEXT_PUBLIC_TWITTER_LINK || "https://twitter.com/hakifi_io";
+export const TELEGRAM_LINK = process.env.NEXT_PUBLIC_TELEGRAM_LINK || "https://t.me/Hakifi";
+export const DISCORD_LINK = process.env.NEXT_PUBLIC_DISCORD_LINK || "https://discord.gg/a3UshKtm";
+export const MAIL_LINK = process.env.NEXT_PUBLIC_MAIL_LINK || "mailto:hi@hakifi.io";
+

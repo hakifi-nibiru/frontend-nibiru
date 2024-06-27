@@ -14,7 +14,6 @@ const useWatchChain = () => {
     // const handleConnectorUpdate = ({ account, chain }: ConnectorData) => {
     //     if (wallet) {
     //         if (account) {
-    //             console.log("new account", account);
     //             disconnect();
     //         } else if (chain) {
     //             toggleIsSupportChainModal((chain?.id !== bscTestnet.id));

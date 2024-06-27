@@ -14,11 +14,15 @@ const Terminology = dynamic(() => import('@/components/BuyCover/Guideline/Termin
 
 const Introduction = () => {
     const { symbol } = useParams();
-
-    const ticker = useTicker(symbol as string);
+    const temp = useMemo(() => (symbol as string).replace("HUSD", "USDT"), [symbol]);
+    const ticker = useTicker(temp);
     const value: number = Number(ticker?.lastPrice) ?? 0;
 
-    const title = useMemo(() => `${formatNumber(value)} | ${(symbol as string).substring(0, symbol.indexOf(symbol.slice(-4).toString()))}/${symbol.slice(-4)} | Hakifi insurance`, [value, symbol]);
+    const title = useMemo(() => {
+        if (isNaN(value) || !symbol) return `Loading ...`;
+
+        return `${formatNumber(value)} | ${(symbol as string).substring(0, symbol.indexOf(symbol.slice(-4).toString()))}/${symbol.slice(-4)} | Hakifi insurance`;
+    }, [value, symbol]);
 
     return (
         <>

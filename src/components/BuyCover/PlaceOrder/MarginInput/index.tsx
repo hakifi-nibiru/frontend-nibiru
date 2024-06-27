@@ -86,7 +86,7 @@ const MarginInput = forwardRef<HTMLInputElement, MarginInputProps>(
                 <FormInputNumber
                     ref={forwardRef}
                     extraLabel={<Suffix setValue={setValue} value={value} {...props} />}
-                    suffix="USDT"
+                    suffix="HUSD"
                     placeholder="Margin"
                     tooltip="Margin of insurance contract. Customize margin will affect the claim amount"
                     size="lg"

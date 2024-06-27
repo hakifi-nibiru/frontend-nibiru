@@ -66,10 +66,10 @@ const ClaimInput = forwardRef<HTMLInputElement, ClaimInputProps>(
                     }
                     min={min}
                     max={max}
-                    suffix="USDT"
+                    suffix="HUSD"
                     placeholder="Claim price"
                     tooltip={
-                        <p>The price triggering your insurance payment. When the market price reaches <span className={cn(side === ENUM_INSURANCE_SIDE.BULL ? "text-positive" : "text-negative")}>{formatNumber(value)}</span> USDT, you will claim <span className="text-positive">{formatNumber(q_claim)}</span> USDT</p>
+                        <p>The price triggering your insurance payment. When the market price reaches <span className={cn(side === ENUM_INSURANCE_SIDE.BULL ? "text-positive" : "text-negative")}>{formatNumber(value)}</span> HUSD, you will claim <span className="text-positive">{formatNumber(q_claim)}</span> HUSD</p>
                     }
                     size="lg"
                     label="Claim price"

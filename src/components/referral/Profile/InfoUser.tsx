@@ -14,7 +14,7 @@ import useBalance from "@/hooks/useBalance";
 import useWalletStore from "@/stores/wallet.store";
 import { formatNumber } from "@/utils/format";
 import { substring } from "@/utils/helper";
-import { USDT_ADDRESS, USDT_NIBIRU_ADDRESS } from "@/web3/constants";
+import { USDT_ADDRESS, NIBIRU_HUSD_ADDRESS } from "@/web3/constants";
 import React from "react";
 import ModalAddReferralCode from "../modal/ModalAddReferralCode";
 
@@ -22,7 +22,7 @@ const assets = [
 	{
 		value: USDT_ADDRESS,
 		iconUrl: "/assets/images/cryptos/usdt.png",
-		label: "USDT",
+		label: "HUSD",
 		assetImage: "https://tether.to/images/logoMarkGreen.svg",
 	},
 	{
@@ -43,7 +43,7 @@ const InfoUser = ({ handleOpenModalEdit }: TProps) => {
 	);
 
 	const { balance: nibiBalance } = useBalance();
-	const { balance: usdtBalance } = useBalance(USDT_NIBIRU_ADDRESS);
+	const { balance: usdtBalance } = useBalance(NIBIRU_HUSD_ADDRESS);
 
 	const wallet = useWalletStore((state) => state.wallet) as Wallet;
 
@@ -76,7 +76,7 @@ const InfoUser = ({ handleOpenModalEdit }: TProps) => {
 						<p className="text-xs text-typo-secondary">Balances</p>
 						<div>
 							<p className="flex items-center justify-start gap-x-1 text-base text-typo-primary">
-								{contractAddress === "USDT"
+								{contractAddress === "HUSD"
 									? formatNumber(usdtBalance, 2)
 									: formatNumber(nibiBalance, 4)}
 								<span>{contractAddress}</span>

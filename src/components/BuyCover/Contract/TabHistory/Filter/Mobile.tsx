@@ -67,7 +67,7 @@ const MainMenu = ({
 											<span className="text-typo-primary">
 												{selectedPair?.asset}
 											</span>
-											<span className="text-typo-secondary"> / USDT</span>
+											<span className="text-typo-secondary"> / HUSD</span>
 										</div>
 									) : (
 										<span className="text-typo-secondary">Select asset</span>

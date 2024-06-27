@@ -83,7 +83,7 @@ const FilterContractList = ({ sorting }: FilterContractListProps) => {
 	useEffect(() => {
 		if (address && connected) {
 			const assetFilter = hideOtherSymbol
-				? (symbol as string).split("USDT")[0]
+				? (symbol as string).split("HUSD")[0]
 				: asset || "";
 			getAllInsurance({
 				page: Number(currentPage || 1),

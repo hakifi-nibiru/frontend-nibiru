@@ -53,11 +53,11 @@ const Detail = ({ isOpen, handleCloseModal }: ModalInsuranceDetailProps) => {
                     <section className="border border-divider-secondary rounded p-4 flex flex-col gap-4 bg-support-black">
                         <section className="flex items-center justify-between text-body-14">
                             <p className="text-typo-secondary">Estimated profit</p>
-                            <p className="text-typo-primary">{formatNumber(profit)} USDT</p>
+                            <p className="text-typo-primary">{formatNumber(profit)} HUSD</p>
                         </section>
                         <section className="flex items-center justify-between text-body-14">
                             <p className="text-typo-secondary">Open price</p>
-                            <p className="text-typo-primary">{formatNumber(p_open)} USDT</p>
+                            <p className="text-typo-primary">{formatNumber(p_open)} HUSD</p>
                         </section>
                         <section className="flex items-center justify-between text-body-14">
                             <p className="text-typo-secondary">Period</p>

@@ -90,7 +90,7 @@ const FilterWrapper = ({ sorting, handleIsFilter, isFilter }: FilterWrapperProps
 
     useEffect(() => {
         if (connected) {
-            const assetFilter = hideOtherSymbol ? (symbol as string).split('USDT')[0] : (asset || "");
+            const assetFilter = hideOtherSymbol ? (symbol as string).split('HUSD')[0] : (asset || "");
             getInsuranceOpening({
                 page: Number(currentPage || 1),
                 sort: sorting.map(item => `${item.desc ? '-' : ''}${item.id}`).join('') || undefined,

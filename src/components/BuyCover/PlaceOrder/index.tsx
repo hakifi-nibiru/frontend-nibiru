@@ -52,7 +52,7 @@ const Watcher = ({ symbol, pair }: WatcherProps) => {
   const p_claim = Number(values.p_claim) || 0;
   const period = Number(values.period) || 1;
   const side = values.side as ENUM_INSURANCE_SIDE;
-  const ticker = useTicker(symbol);
+  const ticker = useTicker(symbol.replace("HUSD","USDT"));
   const p_open = ticker?.lastPrice || pair.lastPrice || 0;
 
   const [updateParams] = useBuyCoverStore((state) => [state.updateParams]);
@@ -187,7 +187,7 @@ const PlaceOrder = ({
       const defaultPClaim = getDefaultPClaim({
         max: pClaimRange.max,
         min: pClaimRange.min,
-        side,
+        side: expected,
         periodChangeRatio: periodChangeRatio || 1,
       });
       form.setValue("p_claim", defaultPClaim, { shouldValidate: true });
@@ -222,14 +222,6 @@ const PlaceOrder = ({
 
   const [confirm, setConfirm] = useState(false);
   const handleConfirmAction = async () => {
-    // const [err] = await handleRequest(
-    //   handleOnConfirmBuyCover({ margin: Number(margin) }),
-    // );
-    // if (err) {
-    //   console.log(err);
-    //   notifications.error(err.message);
-    //   return;
-    // }
     if (isTablet) setConfirm(true);
     else handleToggleModalConfirm();
   };

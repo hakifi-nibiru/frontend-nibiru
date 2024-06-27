@@ -126,7 +126,7 @@ const StepSuccess = ({ onCloseModal }: StepSuccessProps) => {
                     Contract <span className={cn(side === ENUM_INSURANCE_SIDE.BULL ? "text-positive-label" : "text-negative-label")}>{asset} {side}</span>
                 </p>
                 <p className="text-typo-primary">
-                    successfully margined <span className="text-positive">{formatNumber(margin)} USDT</span>
+                    successfully margined <span className="text-positive">{formatNumber(margin)} HUSD</span>
                 </p>
             </section>
             <section className="border border-divider-secondary rounded flex flex-col gap-3 p-4 w-full">
@@ -145,44 +145,44 @@ const StepSuccess = ({ onCloseModal }: StepSuccessProps) => {
                 <div className="flex justify-between text-body-14">
                     <p className="text-typo-secondary">Estimated profit</p>
                     <p className="text-positive">
-                        {formatNumber(predict_profit.profit)} USDT ({formatNumber(predict_profit.ratio)}%)
+                        {formatNumber(predict_profit.profit)} HUSD ({formatNumber(predict_profit.ratio)}%)
                     </p>
                 </div>
                 <div className="flex items-center justify-between text-body-14">
                     <p className="text-typo-secondary">Claim amount</p>
                     <div className="flex items-center gap-1">
-                        <p className="text-typo-primary">{formatNumber(q_claim)} USDT</p> <span className="text-positive">({formatNumber(qr_claim)}%)</span>
+                        <p className="text-typo-primary">{formatNumber(q_claim)} HUSD</p> <span className="text-positive">({formatNumber(qr_claim)}%)</span>
                     </div>
                 </div>
             </section>
             <AccordionCustom
-                labelClassName="w-full"
+                labelClassName="w-full !bg-support-black rounded"
                 content={
                     <section className="flex flex-col gap-4">
                         <div className="flex items-center justify-between text-body-14">
                             <p className="text-typo-secondary">Insured Value</p>
 
                             <p className="text-typo-primary">
-                                {formatNumber(q_covered)} USDT
+                                {formatNumber(q_covered)} HUSD
                             </p>
                         </div>
                         <div className="flex items-center justify-between text-body-14">
                             <p className="text-typo-secondary">Open price</p>
                             <p className="text-typo-primary">
-                                {formatNumber(p_open)} USDT
+                                {formatNumber(p_open)} HUSD
                             </p>
                         </div>
                         <div className="flex items-center justify-between text-body-14">
                             <p className="text-typo-secondary">Claim price</p>
 
 
-                            <span className="text-typo-primary">{formatNumber(p_claim)} USDT <span className="text-typo-accent">({formatNumber(pr_claim)}%)</span>
+                            <span className="text-typo-primary">{formatNumber(p_claim)} HUSD <span className="text-typo-accent">({formatNumber(pr_claim)}%)</span>
                             </span>
                         </div>
                         <div className="flex items-center justify-between text-body-14">
                             <p className="text-typo-secondary">Liquid. price</p>
 
-                            <span className="text-typo-primary">{formatNumber(p_liquidation)} USDT    <span className="text-typo-accent">({formatNumber(pr_liquidation)}%)
+                            <span className="text-typo-primary">{formatNumber(p_liquidation)} HUSD    <span className="text-typo-accent">({formatNumber(pr_liquidation)}%)
                             </span>
                             </span>
 

@@ -118,7 +118,7 @@ const StepWaiting = ({ asset, setStep }: StepStepWaiting) => {
 				<div className="text-body-14 flex justify-between">
 					<p className="text-typo-secondary">Estimated profit</p>
 					<p className="text-positive">
-						{formatNumber(general.profit)} USDT (
+						{formatNumber(general.profit)} HUSD (
 						{formatNumber(general.r_profit)}%)
 					</p>
 				</div>
@@ -126,7 +126,7 @@ const StepWaiting = ({ asset, setStep }: StepStepWaiting) => {
 					<p className="text-typo-secondary">Claim amount</p>
 					<div className="text-body-14 flex items-center gap-1">
 						<p className="text-typo-primary">
-							{formatNumber(general.q_claim)} USDT
+							{formatNumber(general.q_claim)} HUSD
 						</p>{" "}
 						<span className="text-positive">
 							({formatNumber(general.r_claim)}%)
@@ -142,14 +142,14 @@ const StepWaiting = ({ asset, setStep }: StepStepWaiting) => {
 							<p className="text-typo-secondary">Insured Value</p>
 
 							<p className=" text-typo-primary">
-								{formatNumber(q_covered)} USDT
+								{formatNumber(q_covered)} HUSD
 							</p>
 						</div>
 						<div className="flex items-center justify-between text-body-14">
 							<p className="text-typo-secondary">Claim price</p>
 							<div className="text-body-14">
 								<span className="text-typo-primary">
-									{formatNumber(p_claim)} USDT{" "}
+									{formatNumber(p_claim)} HUSD{" "}
 									<span className="text-typo-accent">
 										({formatNumber(general.r_profit)}%)
 									</span>

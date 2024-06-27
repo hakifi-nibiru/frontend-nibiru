@@ -28,7 +28,7 @@ const TokenItem = ({ pair }: FavoriteItemProps) => {
 
     return (
         <section key={pair.id} className="py-2.5 lg:px-4 flex items-center gap-6 justify-between hover:bg-background-quaternary">
-            <Link href={`/buy-cover/${pair.symbol}`}>
+            <Link href={`/buy-cover/${pair.symbol.replace("USDT","HUSD")}`}>
                 <section className="max-w-[150px] flex items-center gap-2 text-body-14">
                     <Image
                         src={pair.token.attachment}

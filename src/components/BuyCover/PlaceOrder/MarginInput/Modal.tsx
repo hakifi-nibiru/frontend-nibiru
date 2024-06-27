@@ -17,7 +17,7 @@ import useBuyCoverStore from '@/stores/buy-cover.store';
 import { cn } from '@/utils';
 import { HEDGE_INIT, MARGIN_PERCENT } from '@/utils/constant';
 import { formatNumber } from '@/utils/format';
-import { USDT_NIBIRU_ADDRESS } from '@/web3/constants';
+import { NIBIRU_HUSD_ADDRESS } from '@/web3/constants';
 import { ENUM_INSURANCE_SIDE, PERIOD_UNIT } from 'hakifi-formula';
 import { useParams } from 'next/navigation';
 import { forwardRef, memo, useEffect, useMemo, useState } from 'react';
@@ -109,7 +109,7 @@ const AdjustMargin = forwardRef<HTMLInputElement, AdjustMarginInputProps>(
             };
         }, [p_claim, q_claim, p_market]);
 
-        const { balance } = useBalance(USDT_NIBIRU_ADDRESS);
+        const { balance } = useBalance(NIBIRU_HUSD_ADDRESS);
 
         // const { address } = useAccount();
         // const usdtBalance = useBalance({
@@ -159,7 +159,7 @@ const AdjustMargin = forwardRef<HTMLInputElement, AdjustMarginInputProps>(
                     <>
                         <FormInputNumber
                             ref={forwardRef}
-                            suffix="USDT"
+                            suffix="HUSD"
                             placeholder="Margin"
                             tooltip="Margin of insurance contract. Customize margin will change the total received Q-Claim"
                             wrapperClassLabel="border-b border-dashed border-typo-secondary"
@@ -189,7 +189,7 @@ const AdjustMargin = forwardRef<HTMLInputElement, AdjustMarginInputProps>(
                             <div className="flex items-center justify-between gap-1 text-body-14">
                                 <p className="text-body-14 text-typo-secondary">Available</p>
                                 <p className="text-body-14 text-typo-primary">
-                                    {formatNumber(balance)} USDT
+                                    {formatNumber(balance)} HUSD
                                 </p>
                             </div>
                             <div className="text-body-14 flex items-center justify-between gap-1 ">
@@ -202,7 +202,7 @@ const AdjustMargin = forwardRef<HTMLInputElement, AdjustMarginInputProps>(
                                     showArrow={true}
                                 />
                                 <div className="text-typo-primary text-body-14">
-                                    {formatNumber(general.q_claim)} USDT{' '}
+                                    {formatNumber(general.q_claim)} HUSD{' '}
                                     <span className="text-positive">
                                         (+{formatNumber(general.r_claim)}%)
                                     </span>
@@ -236,7 +236,7 @@ const AdjustMargin = forwardRef<HTMLInputElement, AdjustMarginInputProps>(
                 <>
                     <FormInputNumber
                         ref={forwardRef}
-                        suffix="USDT"
+                        suffix="HUSD"
                         placeholder="Margin"
                         tooltip="Margin of insurance contract. Customize margin will change the total received claim amount"
                         wrapperClassLabel="border-b border-dashed border-typo-secondary"
@@ -268,14 +268,14 @@ const AdjustMargin = forwardRef<HTMLInputElement, AdjustMarginInputProps>(
                         <div className="flex items-center justify-between gap-1 text-body-14">
                             <p className="text-body-14 text-typo-secondary">Available</p>
                             <p className="text-body-14 text-typo-primary">
-                                {formatNumber(balance)} USDT
+                                {formatNumber(balance)} HUSD
                             </p>
                         </div>
                         <div className="text-body-14 flex items-center justify-between gap-1 ">
                             <TooltipCustom
                                 content={
                                     <p>
-                                        Quanity of cover payout. When the market price reaches Claim price of <span className={cn(side === ENUM_INSURANCE_SIDE.BULL ? "text-positive" : "text-negative")}>{formatNumber(p_claim)}</span> USDT, the payout of <span className="text-positive">{formatNumber(q_claim)}</span> USDT will automatically be transferred to your wallet
+                                        Quanity of cover payout. When the market price reaches Claim price of <span className={cn(side === ENUM_INSURANCE_SIDE.BULL ? "text-positive" : "text-negative")}>{formatNumber(p_claim)}</span> HUSD, the payout of <span className="text-positive">{formatNumber(q_claim)}</span> HUSD will automatically be transferred to your wallet
                                     </p>
                                 }
                                 placement="right"
@@ -285,7 +285,7 @@ const AdjustMargin = forwardRef<HTMLInputElement, AdjustMarginInputProps>(
                                 showArrow={true}
                             />
                             <div className="text-typo-primary">
-                                {formatNumber(general.q_claim)} USDT{' '}
+                                {formatNumber(general.q_claim)} HUSD{' '}
                                 <span className="text-positive">
                                     (+{formatNumber(general.r_claim)}%)
                                 </span>

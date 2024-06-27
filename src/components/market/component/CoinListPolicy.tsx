@@ -71,8 +71,8 @@ export default function CoinListPolicy({ listCoin }: Props) {
                     Total Margin Open/Limit
                   </p>
                   <p className="text-support-white text-end">
-                    {formatNumber(coin.totalMarginOpen, 2)} USDT/
-                    {formatNumber(coin.totalMarginLimit, 2)} USDT
+                    {formatNumber(coin.totalMarginOpen, 2)} HUSD/
+                    {formatNumber(coin.totalMarginLimit, 2)} HUSD
                   </p>
                 </div>
                 <Button

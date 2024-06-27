@@ -6,11 +6,11 @@ import useBuyCoverStore from "@/stores/buy-cover.store";
 import {
   CHAIN_NAME,
   INSURANCE_NIBIRU_ADDRESS,
-  USDT_NIBIRU_ADDRESS,
+  NIBIRU_HUSD_ADDRESS
 } from "@/web3/constants";
 import { useChain } from "@cosmos-kit/react";
 import { NibiruTxClient } from "@nibiruchain/nibijs";
-import { useCallback, useContext, useState } from "react";
+import { useCallback, useContext } from "react";
 
 type BuyCoverDto = {
   p_claim: number;
@@ -27,7 +27,7 @@ const useBuyCover = (
   buyCover: (params: BuyCoverDto) => Promise<void | null>;
 } => {
   const { chain, querier } = useContext(NibijsContext) as NibiruContextType;
-  const { balance, refetch } = useBalance(USDT_NIBIRU_ADDRESS);
+  const { balance, refetch } = useBalance(NIBIRU_HUSD_ADDRESS);
   const { balance: nibiBalance } = useBalance();
   const { getOfflineSigner, address } = useChain(CHAIN_NAME);
   const updateParams = useBuyCoverStore((state) => state.updateParams);
@@ -74,7 +74,7 @@ const useBuyCover = (
           },
         };
         const isApprove = await querier.wasmClient.queryContractSmart(
-          USDT_NIBIRU_ADDRESS,
+          NIBIRU_HUSD_ADDRESS,
           msgPreApprove
         );
         const needApprove = isApprove.allowance < data.margin;
@@ -92,7 +92,7 @@ const useBuyCover = (
 
           const approve = await txClient.wasmClient.execute(
             address,
-            USDT_NIBIRU_ADDRESS,
+            NIBIRU_HUSD_ADDRESS,
             msgApprove,
             {
               amount: [

@@ -225,7 +225,7 @@ export const PnlWrapper = memo(
           'text-body-14',
           Number(getPnl.ratio) >= 0 ? 'text-positive' : 'text-negative',
         )}>
-        {getPnl.pnl} USDT ({Number(getPnl.ratio) >= 0 ? '+' : ''}
+        {getPnl.pnl} HUSD ({Number(getPnl.ratio) >= 0 ? '+' : ''}
         {getPnl.ratio}%)
       </div>
     );
@@ -288,7 +288,9 @@ export const QClaimWrapper = ({ qClaim, margin, unit }: QClaimProps) => {
   return (
     <div className="flex items-center gap-1">
       <span className="flex items-center text-typo-primary">
-        {formatNumber(qClaim)} {unit}
+        {formatNumber(qClaim)} {" "}
+        {/* {unit} */}
+        HUSD
       </span>
       <span className="text-positive">({r_claim}%)</span>
     </div>

@@ -138,13 +138,13 @@ const StepConfirm = ({ pair, setStep, onCloseModal }: StepConfirmProps) => {
         <div className="flex items-center justify-between text-body-14">
           <p className="text-typo-secondary">Margin</p>
           <p className="text-typo-primary">
-            {formatNumber(margin)} USDT
+            {formatNumber(margin)} HUSD
           </p>
         </div>
         <div className="flex items-center justify-between text-body-14">
           <p className="text-typo-secondary">Claim amount</p>
           <p className="text-typo-primary">
-            {formatNumber(general.q_claim)} USDT (
+            {formatNumber(general.q_claim)} HUSD (
             <span className="text-positive">
               {formatNumber(general.r_claim)}%
             </span>

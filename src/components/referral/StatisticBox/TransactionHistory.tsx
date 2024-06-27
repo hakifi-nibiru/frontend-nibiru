@@ -63,8 +63,8 @@ const TransactionHistory: React.FC = () => {
 				value: "all",
 			},
 			{
-				label: "USDT",
-				value: "USDT",
+				label: "HUSD",
+				value: "HUSD",
 				iconUrl: "/assets/images/cryptos/usdt.png",
 			},
 			// {

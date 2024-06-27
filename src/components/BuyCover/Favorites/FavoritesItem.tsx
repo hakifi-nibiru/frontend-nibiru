@@ -29,7 +29,7 @@ const FavoriteItem = ({ pair, isFirst }: IFavoriteItem) => {
           <div>
             <div className="text-body-12">
               <span className="text-typo-primary">{pair.asset}</span> 
-              <span className="text-typo-secondary"> / {pair.unit}</span>
+              <span className="text-typo-secondary"> / HUSD</span>
             </div>
             <TickerWrapper
               jump

@@ -153,7 +153,7 @@ const AssetDropdown = React.forwardRef<HTMLButtonElement, IAssetDropdownProps>(
 										)}
 									>
 										{" "}
-										/ {" "} USDT
+										/ {" "} HUSD
 									</span>
 								</div>
 							) : (

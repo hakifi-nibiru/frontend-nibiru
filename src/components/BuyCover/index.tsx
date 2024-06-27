@@ -14,7 +14,7 @@ import FavoritesLoader from "./Loader/FavoritesLoader";
 import InformationLoader from "./Loader/InformationLoader";
 import useBalance from "@/hooks/useBalance";
 import useWallet from "@/hooks/useWallet";
-import { USDT_NIBIRU_ADDRESS } from "@/web3/constants";
+import { NIBIRU_HUSD_ADDRESS } from "@/web3/constants";
 type BuyCoverProps = {
 	symbol: string;
 	pair: PairDetail;
@@ -50,7 +50,7 @@ const BuyCover = ({ symbol, pair, marketPairs }: BuyCoverProps) => {
 	const [, forceUpdate] = useReducer(x => x + 1, 0);
 	const setMarketPairs = useMarketStore((state) => state.setMarketPairs);
 	const { connected } = useWallet();
-	const { refetch } = useBalance(USDT_NIBIRU_ADDRESS);
+	const { refetch } = useBalance(NIBIRU_HUSD_ADDRESS);
 	const isTablet = useIsTablet();
 	const [getInsuranceOpening, getInsuranceHistory] = useInsuranceStore(
 		(state) => [state.getInsuranceOpening, state.getInsuranceHistory]

@@ -47,7 +47,7 @@ const Glosbe = ({
         setIntervalChart,
         handleChangeIndicator,
         indicator
-    } = useChart(symbol, true);
+    } = useChart(symbol.replace("HUSD", "USDT"), true);
 
     const { drawing, clearLine } = useDrawing(chart, chartReady, data);
 

@@ -69,7 +69,7 @@ const ModalInfoFriend = ({ open, handleClose }: TProps) => {
         <div className="p-4 w-full flex flex-col gap-y-3 items-center bg-support-black rounded-md text-sm">
           <div className="flex items-center justify-between w-full">
             <p className="text-typo-secondary">Margin</p>
-            <p className="text-typo-primary">{formatNumber(dataFriend?.totalMargin , 2)} USDT</p>
+            <p className="text-typo-primary">{formatNumber(dataFriend?.totalMargin , 2)} HUSD</p>
           </div>
           <div className="flex items-center justify-between w-full">
             <p className="text-typo-secondary">Total contracts</p>
@@ -82,7 +82,7 @@ const ModalInfoFriend = ({ open, handleClose }: TProps) => {
             <div className="flex items-center justify-between w-full">
               <p className="text-typo-secondary">Total reward</p>
               <p className="text-typo-primary">
-                {floorNumber(dataFriend?.totalCommission || 0)} USDT
+                {floorNumber(dataFriend?.totalCommission || 0)} HUSD
               </p>
             </div>
             {dataFriend?.metadata?.friendType === 1 ? (
@@ -92,7 +92,7 @@ const ModalInfoFriend = ({ open, handleClose }: TProps) => {
                   {myPercent > 0
                     ? floorNumber((dataFriend?.totalCommission as number) / myPercent * (1 - myPercent))
                     : floorNumber(dataFriend?.totalCommission || 0)}{" "}
-                  USDT
+                  HUSD
                 </p>
               </div>
             ) : null}

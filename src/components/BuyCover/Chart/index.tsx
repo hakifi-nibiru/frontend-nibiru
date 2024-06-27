@@ -48,7 +48,7 @@ const Chart = ({
 
         {
           showChart ? <Glosbe
-            symbol={symbol}
+            symbol={symbol.replace("HUSD","USDT")}
             fullScreen={fullScreen}
             onFullScreen={(fullScreen: boolean) => setFullScreen(fullScreen)}
           /> : null

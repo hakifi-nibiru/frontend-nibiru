@@ -7,10 +7,12 @@ import TooltipCustom from "@/components/common/Tooltip";
 import useBalance from "@/hooks/useBalance";
 import { useIsTablet } from "@/hooks/useMediaQuery";
 import { Ticker, useTickerSocket } from "@/hooks/useTickerSocket";
+import useWallet from "@/hooks/useWallet";
 import useAppStore from "@/stores/app.store";
 import useBuyCoverStore from "@/stores/buy-cover.store";
 import { cn } from "@/utils";
 import { formatNumber } from "@/utils/format";
+import { NIBIRU_HUSD_ADDRESS } from "@/web3/constants";
 import { ENUM_INSURANCE_SIDE } from "hakifi-formula";
 import { useParams } from "next/navigation";
 import { memo, useMemo, useState } from "react";
@@ -20,8 +22,6 @@ import ClaimInput from "./ClaimInput";
 import CoverAmountInput from "./CoverAmountInput";
 import MarginInput from "./MarginInput";
 import ModeInput from "./ModeInput";
-import useWallet from "@/hooks/useWallet";
-import { USDT_NIBIRU_ADDRESS } from "@/web3/constants";
 
 type FormBuyCoverProps = {
 	pair: PairDetail;
@@ -79,7 +79,7 @@ const FormBuyCover = ({
 		return expect;
 	}, [side]);
 
-	const { balance } = useBalance(USDT_NIBIRU_ADDRESS);
+	const { balance } = useBalance(NIBIRU_HUSD_ADDRESS);
 	const { isValid } = useFormState({
 		control: form.control,
 	});
@@ -87,6 +87,7 @@ const FormBuyCover = ({
 	const isDisableBuyCover = useMemo(() => {
 		return balance === 0 || !isValid;
 	}, [balance, isValid]);
+	
 	const marginRangeValidate = useMemo(() => {
 		if (balance === 0) return "Invalid balance";
 		const minMargin = balance === 0 ? 0 : q_covered * 0.02;
@@ -143,7 +144,6 @@ const FormBuyCover = ({
 						)}
 					/>
 				</section>
-
 				<Controller
 					name="p_claim"
 					render={({ field: { onChange, onBlur, value }, fieldState }) => (
@@ -182,11 +182,11 @@ const FormBuyCover = ({
 												)}>
 												{formatNumber(p_claim)}
 											</span>{" "}
-											USDT, a payment of{" "}
+											HUSD, a payment of{" "}
 											<span className="text-positive">
 												{formatNumber(q_claim)}
 											</span>{" "}
-											USDT will be automatically transferred to your wallet
+											HUSD will be automatically transferred to your wallet
 										</p>
 									}
 									title={
@@ -202,7 +202,7 @@ const FormBuyCover = ({
 									+{q_claim ? formatNumber((q_claim / margin) * 100) : 0}%
 								</p>
 								<p className="text-body-14 text-typo-primary">
-									{q_claim ? formatNumber(q_claim) : "-"} USDT
+									{q_claim ? formatNumber(q_claim) : "-"} HUSD
 								</p>
 							</div>
 						</section>
@@ -217,7 +217,7 @@ const FormBuyCover = ({
 													Profit from insurance payment
 												</p>
 												<p className="whitespace-nowrap">
-													{formatNumber(profit)} USDT
+													{formatNumber(profit)} HUSD
 												</p>
 											</div>
 										</>
@@ -232,13 +232,14 @@ const FormBuyCover = ({
 								/>
 							</div>
 							<p className="text-body-14 text-typo-primary">
-								Save {formatNumber(profit)} USDT
+								Save {formatNumber(profit)} HUSD
 							</p>
 						</section>
 					</section>
 				</section>
 
 				{/* Submit button */}
+				<div>{connected}</div>
 				{connected ? (
 					<Button
 						variant={isTablet ? "custom" : "primary"}
@@ -251,11 +252,11 @@ const FormBuyCover = ({
 							!isDisableBuyCover &&
 							!isTablet &&
 							side === ENUM_INSURANCE_SIDE.BULL &&
-							"sm:hover:!bg-positive-label sm:hover:!text-typo-primary",
+							"sm:hover:!bg-positive-label sm:hover:!text-typo-primary [&>span]:sm:hover:bg-support-white",
 							!isDisableBuyCover &&
 							!isTablet &&
 							side === ENUM_INSURANCE_SIDE.BEAR &&
-							"sm:hover:!bg-negative-label sm:hover:!text-typo-primary",
+							"sm:hover:!bg-negative-label sm:hover:!text-typo-primary [&>span]:sm:hover:bg-support-white",
 							!isDisableBuyCover &&
 							isTablet &&
 							side === ENUM_INSURANCE_SIDE.BULL &&
@@ -265,7 +266,7 @@ const FormBuyCover = ({
 							side === ENUM_INSURANCE_SIDE.BEAR &&
 							"bg-negative-label !text-typo-primary"
 						)}
-						pointClassName="!bg-support-white">
+					>
 						Buy cover
 					</Button>
 				) : (

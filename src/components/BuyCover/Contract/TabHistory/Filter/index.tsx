@@ -78,9 +78,8 @@ const FilterWrapper = ({ sorting, handleIsFilter, isFilter }: FilterWrapperProps
     const { symbol } = useParams();
     const { connected } = useWallet();
     useEffect(() => {
-        console.log(currentPage)
         if (connected) {
-            const filterAsset = hideOtherSymbol ? (symbol as string).split('USDT')[0] : asset;
+            const filterAsset = hideOtherSymbol ? (symbol as string).split('HUSD')[0] : asset;
             getInsuranceHistory({
                 page: Number(currentPage || 1),
                 sort: sorting.map(item => `${item.desc ? '-' : ''}${item.id}`).join('') || undefined,

@@ -58,7 +58,7 @@ const OverviewChart: React.FC<TProps> = ({ data, filter, setFilter }) => {
                   <p class="text-typo-primary text-sm">${formatNumber(
 										value,
 										2
-									)} USDT</p>
+									)} HUSD</p>
             </div>`;
 				},
 				theme: "dark",
@@ -293,7 +293,7 @@ const OverviewChart: React.FC<TProps> = ({ data, filter, setFilter }) => {
 							data[data.length - 1]?.totalPnl === undefined
 								? "+"
 								: ""}
-							{formatNumber(data[data.length - 1]?.totalPnl, 2)} USDT
+							{formatNumber(data[data.length - 1]?.totalPnl, 2)} HUSD
 						</div>
 					</div>
 				</div>

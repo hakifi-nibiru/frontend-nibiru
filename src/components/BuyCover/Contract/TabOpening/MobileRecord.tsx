@@ -44,7 +44,7 @@ const MobileRecord = ({ data, onShowDetail }: RecordProps) => {
                     />
                     <div className="flex items-center gap-1">
                         <span className="text-typo-primary">{data.asset}</span>
-                        <span className="text-typo-secondary">/ USDT</span>
+                        <span className="text-typo-secondary">/ HUSD</span>
                     </div>
                 </div>
                 <div
@@ -126,7 +126,7 @@ const MobileRecord = ({ data, onShowDetail }: RecordProps) => {
                         <p className="text-typo-secondary">Market price</p>
                         <TickerWrapper
                             jump
-                            symbol={`${asset}USDT`}
+                            symbol={`${asset}HUSD`}
                             decimal={8}
                             labelclassName="!text-typo-primary text-body-12"
                             showPercent={false}
@@ -135,7 +135,7 @@ const MobileRecord = ({ data, onShowDetail }: RecordProps) => {
                 </div>
                 <CloseButton
                     onClick={() => handleCloseAction(data)}
-                    symbol={`${asset}USDT`}
+                    symbol={`${asset}HUSD`}
                     pCancel={p_cancel as number}
                     pClaim={p_claim}
                     title="Close"

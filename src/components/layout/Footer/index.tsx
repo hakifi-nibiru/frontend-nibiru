@@ -7,6 +7,7 @@ import { navigations } from "@/configs/navigations";
 import { useIsTablet } from "@/hooks/useMediaQuery";
 import useAppStore from "@/stores/app.store";
 import { cn } from "@/utils";
+import { DISCORD_LINK, MAIL_LINK, TELEGRAM_LINK, TWITTER_LINK } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -132,7 +133,7 @@ const Footer = () => {
 						<Link href="https://t.me/Hakifi" target="_blank">
 							<TelegramIcon className="w-7 h-7" fill="#F37B23" />
 						</Link>
-						<Link href="https://discord.gg/a3UshKtm" target="_blank">
+						<Link href="https://discord.com/invite/zGGDzvUcPd" target="_blank">
 							<DiscordIcon className="w-7 h-7" fill="#F37B23" />
 						</Link>
 						<Link href="mailto:hi@hakifi.io">
@@ -208,16 +209,16 @@ const Footer = () => {
 							Join the community
 						</p>
 						<section className="text-body-16 text-support-black mt-4 flex items-center gap-4">
-							<Link href="https://twitter.com/hakifi_io" target="_blank">
+							<Link href={TWITTER_LINK} target="_blank">
 								<TwitterIcon className="w-7 h-7" fill="#F37B23" />
 							</Link>
-							<Link href="https://t.me/Hakifi" target="_blank">
+							<Link href={TELEGRAM_LINK} target="_blank">
 								<TelegramIcon className="w-7 h-7" fill="#F37B23" />
 							</Link>
-							<Link href="https://discord.gg/a3UshKtm">
+							<Link href={DISCORD_LINK}>
 								<DiscordIcon className="w-7 h-7" fill="#F37B23" />
 							</Link>
-							<Link href="mailto:hi@hakifi.io">
+							<Link href={MAIL_LINK}>
 								<MailIcon className="w-7 h-7" fill="#F37B23" />
 							</Link>
 						</section>
